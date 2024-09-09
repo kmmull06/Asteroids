@@ -11,7 +11,7 @@ def main():
         screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
         clock = pygame.time.Clock()
         dt = 0
-        player = Player(SCREEN_WIDTH / 2, SCREEN_WIDTH / 2, PLAYER_RADIUS)
+        player = Player(SCREEN_WIDTH / 2, SCREEN_WIDTH / 2, PLAYER_RADIUS, shot_group)
 
         updatable = pygame.sprite.Group()
         drawable = pygame.sprite.Group()
