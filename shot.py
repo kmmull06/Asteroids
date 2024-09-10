@@ -6,10 +6,10 @@ class Shot(CircleShape):
 
     containers = None
 
-    def __init__(self,position,velocity,shot_group):
+    def __init__(self,position,velocity):
         super().__init__(position.x,position.y, SHOT_RADIUS)
         self.velocity = velocity
-        self.add(shot_group)
+        self.add(Shot.containers)
         if Shot.containers is not None:
             self.add(Shot.containers)
 

@@ -31,9 +31,8 @@ class Player(CircleShape):
 
     def shoot(self):
         direction = pygame.Vector2(0,1).rotate(self.rotation).normalize()
-        shot = Shot(self.position, direction)
-        self.shot_group.add(shot)
-
+        velocity = direction * PLAYER_SHOOT_SPEED
+        shot = Shot(self.position, velocity)
     def update(self,dt):
         keys = pygame.key.get_pressed()
 
