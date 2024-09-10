@@ -11,6 +11,7 @@ def main():
         screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
         clock = pygame.time.Clock()
         dt = 0
+        asteroids = []
         shot_group = pygame.sprite.Group()
         player = Player(SCREEN_WIDTH / 2, SCREEN_WIDTH / 2, PLAYER_RADIUS, shot_group)
 
@@ -30,6 +31,7 @@ def main():
         asteroid_field = AsteroidField()
 
         running = True
+        
         while True:
                 for event in pygame.event.get():
                         if event.type == pygame.QUIT:
@@ -52,6 +54,7 @@ def main():
                 for shot in shot_group:
                         for asteroid in asteroids:
                                 if shot.check_collision(asteroid):
+                                        asteroid.split(asteroids)
                                         asteroid.kill()
                                         shot.kill
                                 
