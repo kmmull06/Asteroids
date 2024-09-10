@@ -10,7 +10,8 @@ class Shot(CircleShape):
         super().__init__(position.x,position.y, SHOT_RADIUS)
         self.velocity = velocity
         self.add(shot_group)
-        self.add(self.containers)
+        if Shot.containers is not None:
+            self.add(Shot.containers)
 
     def update(self, delta_time):
         self.position += self.velocity * delta_time
